@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="apple-mobile-web-app-title" content="Черга">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<title>SpainLife · Очередь записи</title>
+<style>
+  :root{--ink:#1C1C1E;--ink2:#3C3C43;--ink3:#8E8E93;--line:#D1D1D6;--red:#FF3B30;--green:#34C759;}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  html{-webkit-text-size-adjust:100%;}
+  body{background:#F2F2F7;font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.35;padding:max(14px,env(safe-area-inset-left)) 14px calc(30px + env(safe-area-inset-bottom));}
+  .wrap{max-width:720px;margin:0 auto;}
+  header{position:sticky;top:0;z-index:5;background:#F2F2F7;padding:14px 2px 12px;margin:0 -2px;}
+  .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);display:flex;align-items:center;gap:7px;}
+  .eyebrow .d{width:7px;height:7px;border-radius:50%;background:var(--red);}
+  h1{font-size:23px;font-weight:800;letter-spacing:-.02em;margin-top:5px;line-height:1.1;}
+  .date{font-size:12.5px;color:var(--ink3);margin-top:4px;}
+  .kpis{display:flex;gap:8px;margin-top:12px;}
+  .kpi{flex:1;background:#fff;border:1px solid var(--line);border-radius:13px;padding:9px 6px;text-align:center;}
+  .kpi .v{font-size:20px;font-weight:800;line-height:1;}
+  .kpi .k{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--ink3);margin-top:4px;}
+  .fr{background:#fff;border:1px solid var(--line);border-radius:16px;margin-top:12px;overflow:hidden;}
+  summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;grid-template-areas:"name chev" "sub chev" "counts counts";gap:2px 8px;padding:14px 16px;background:var(--bg);border-bottom:1px solid var(--bd);align-items:center;}
+  summary::-webkit-details-marker{display:none;}
+  .fname{grid-area:name;font-size:17px;font-weight:800;letter-spacing:-.01em;color:#1C1C1E;display:flex;align-items:center;gap:7px;}
+  .badge{font-size:10.5px;font-weight:800;background:#fff;border-radius:100px;padding:2px 8px;}
+  .fsub{grid-area:sub;font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#1C1C1E;opacity:.6;}
+  .fcounts{grid-area:counts;display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;}
+  .sc{font-size:11px;font-weight:800;padding:3px 9px;border-radius:100px;background:#fff;}
+  .sc.rec{color:var(--red);} .sc.done{color:var(--green);}
+  .sc.done::before{content:"\1F7E2 ";}
+  .chev{grid-area:chev;font-size:15px;color:#1C1C1E;opacity:.45;transition:transform .2s;}
+  details[open] .chev{transform:rotate(180deg);}
+  .fbody{padding:10px 12px 13px;display:flex;flex-direction:column;gap:8px;}
+  .cell{position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 44px 11px 44px;transition:opacity .2s;}
+  .cell.done-cell{padding-left:13px;}
+  .cell .tt{font-size:14.5px;font-weight:700;letter-spacing:-.01em;line-height:1.28;color:#3C3C43;}
+  .cell .fn{font-size:10.5px;font-weight:500;color:#A9A9AE;margin-top:5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all;}
+  body{counter-reset:done left;}
+  .cell[data-id]:has(input:checked){counter-increment:done;}
+  .cell[data-id]:not(:has(input:checked)){counter-increment:left;}
+  .cell:has(input:checked),.cell.checked{opacity:.5;}
+  .cell:has(input:checked) .tt,.cell.checked .tt{text-decoration:line-through;}
+  .cell:has(input:checked) .ind.rec{background:var(--green);}
+  .ind{position:absolute;top:12px;right:12px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex:none;}
+  .ind.rec{border-radius:50%;background:var(--red);color:#fff;font-size:12px;font-weight:800;}
+  .ind.done{border-radius:50%;background:var(--green);}
+  .cb{position:absolute;top:12px;left:12px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+  .cb input{position:absolute;opacity:0;width:24px;height:24px;margin:0;cursor:pointer;}
+  .cb .box{width:20px;height:20px;border-radius:7px;border:2px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;}
+  .cb input:checked + .box{background:var(--green);border-color:var(--green);}
+  .cb input:checked + .box::after{content:"";width:10px;height:6px;border-left:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:rotate(-45deg) translate(1px,-1px);}
+  .copybtn{width:100%;margin-top:14px;padding:15px;border-radius:14px;border:none;background:var(--green);color:#fff;font-size:15px;font-weight:800;font-family:inherit;cursor:pointer;-webkit-appearance:none;}
+  .copybtn:active{opacity:.7;}
+  .copybtn.ok{background:#1C1C1E;}
+  .legend{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 15px;margin-top:14px;}
+  .legend .lt{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);margin-bottom:9px;}
+  .lg{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--ink2);font-weight:600;padding:4px 0;}
+  .lg .ci{width:19px;height:19px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;flex:none;}
+  .bar{position:sticky;bottom:0;z-index:6;display:flex;gap:8px;margin:14px -2px 0;padding:10px 2px calc(8px + env(safe-area-inset-bottom));background:rgba(242,242,247,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--line);}
+  .bar .b{flex:1;background:#fff;border:1px solid var(--line);border-radius:13px;padding:9px 6px;text-align:center;}
+  .bar .bv{font-size:20px;font-weight:800;line-height:1;}
+  .bar .bv.g{color:var(--green);} .bar .bv.r{color:var(--red);}
+  .bar .bv.g::after{content:counter(done);}
+  .bar .bv.r::after{content:counter(left);}
+  .bar .bk{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--ink3);margin-top:4px;}
+  .foot{font-size:12px;color:var(--ink3);text-align:center;margin-top:16px;line-height:1.5;}
+  @media (min-width:820px){.wrap{max-width:1120px;} .cols{column-count:2;column-gap:14px;} .fr{break-inside:avoid;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><span class="d"></span>SpainLife · Очередь записи</div>
+    <h1>Надиктовки по франшизам</h1>
+    <div class="date">Тапни франшизу, чтобы развернуть · порядок по весу франшизы · обновлено 19.08.2026</div>
+    <div class="kpis">
+      <div class="kpi"><div class="v" style="color:var(--red)">49</div><div class="k">записать</div></div>
+      <div class="kpi"><div class="v" style="color:var(--green)">2</div><div class="k">записано</div></div>
+      <div class="kpi"><div class="v">8</div><div class="k">франшиз</div></div>
+    </div>
+  </header>
+  <div class="cols">
+    <details class="fr" style="--bg:#E5F1FF;--bd:#E5F1FF">
+  <summary>
+    <span class="fname">Країна Х проти Іспанії</span>
+    <span class="fsub">№4 · Growth</span>
+    <span class="fcounts"><span class="sc rec">8 записать</span></span>
+    <span class="chev">▾</span>
+  </summary>
+  <div class="fbody"><div class="cell" data-id="c703ba672594"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">1</span><div class="tt">Чому Іспанія краще (Раскрыть тему с ВНЖ и легализацией)...</div><div class="fn">F04_chomu-ispaniia-krashche-raskryt-temu.txt</div></div><div class="cell" data-id="c8a771dca8ff"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">2</span><div class="tt">Що дратує в Іспаніі, чого немає в Австріі?</div><div class="fn">F04_shcho-dratuie-v-ispanii-choho.txt</div></div><div class="cell" data-id="cb51dfa8896a"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">3</span><div class="tt">Чому Молдова краще!? 5 сильних переваг для українських переселенців</div><div class="fn">F04_chomu-moldova-krashche-5-sylnykh.txt</div></div><div class="cell" data-id="c7b0eb5e2227"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">4</span><div class="tt">5 речей через які хочеться поїхати звідси...</div><div class="fn">F04_5-rechei-cherez-iaki-khochetsia.txt</div></div><div class="cell" data-id="c4db8748b1f5"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">5</span><div class="tt">Испания - ожидания и реальность.</div><div class="fn">F04_yspanyia-ozhydanyia-y-realnost.txt</div></div><div class="cell" data-id="c11d76d731a5"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">6</span><div class="tt">Школа: Іспанія і Україна - чесне порівняння.</div><div class="fn">F04_shkola-ispaniia-i-ukraina-chesne.txt</div></div><div class="cell" data-id="c994be1da93d"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">7</span><div class="tt">Медицина: Іспанія vs Україна — чесне порівняння</div><div class="fn">F04_medytsyna-ispaniia-vs-ukraina-chesne.txt</div></div><div class="cell" data-id="c77aecc58334"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">8</span><div class="tt">Чому ми обрали Іспанію... (сказать правду)</div><div class="fn">F04_chomu-my-obraly-ispaniiu-skazat.txt</div></div></div>
+</details><details class="fr" style="--bg:#E8F8ED;--bd:#E8F8ED">
+  <summary>
+    <span class="fname">Термінові новини</span>
+    <span class="fsub">№2 · Growth</span>
+    <span class="fcounts"><span class="sc rec">1 записать</span></span>
+    <span class="chev">▾</span>
+  </summary>
+  <div class="fbody"><div class="cell" data-id="c238bdfacf19"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">1</span><div class="tt">Терміново: зміни в розмірі допомоги у 2026 — перевір свій</div><div class="fn">F02_terminovo-zminy-v-rozmiri-dopomohy.txt</div></div></div>
+</details><details class="fr" style="--bg:#ECEBFB;--bd:#ECEBFB">
+  <summary>
+    <span class="fname">Скільки коштує</span>
+    <span class="fsub">№6 · Growth · лайфхак</span>
+    <span class="fcounts"><span class="sc rec">7 записать</span><span class="sc done">1 записано</span></span>
+    <span class="chev">▾</span>
+  </summary>
+  <div class="fbody"><div class="cell" data-id="c420eaa80a2d"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">1</span><div class="tt">Як за 18 євро в Іспанії отримати безлімітний інтернет на всю родину</div><div class="fn">F06_iak-za-18-ievro-v.txt</div></div><div class="cell" data-id="c3d134b7b02f"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">2</span><div class="tt">Скільки коштує тиждень їжі — реальний чек родини за тиждень</div><div class="fn">F06_skilky-koshtuie-tyzhden-izhi-realnyi.txt</div></div><div class="cell" data-id="c0c4450aa6ce"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">3</span><div class="tt">Цены на распродаже в Испании (Кроссовки, купальник, в Заре кофта)Здесь можно купить классные кроссовки на ребёнка 36-го по 41-й размер всего за 15 €</div><div class="fn">F06_tseny-na-rasprodazhe-v-yspanyy.txt</div></div><div class="cell" data-id="c1b15a4d13c6"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">4</span><div class="tt">Мінімальний бюджет для життя в Іспанії: цифра, яку всі занижують</div><div class="fn">F06_minimalnyi-biudzhet-dlia-zhyttia-v.txt</div></div><div class="cell" data-id="caa123bde7f6"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">5</span><div class="tt">Як ми заощаджуємо на їжі: 7 правил нашої родини в Іспанії</div><div class="fn">F06_iak-my-zaoshchadzhuiemo-na-izhi.txt</div></div><div class="cell" data-id="c9821816695e"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">6</span><div class="tt">Де купити дешевше: Lidl, Mercadona, Aldi, Día — порівнюємо</div><div class="fn">F06_de-kupyty-deshevshe-lidl-mercadona.txt</div></div><div class="cell" data-id="ce6eb7891a01"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">7</span><div class="tt">Скільки коштує їжа на ринку vs супермаркет — порівнюємо в Іспанії</div><div class="fn">F06_skilky-koshtuie-izha-na-rynku.txt</div></div><div class="cell done-cell"><span class="ind done"></span><div class="tt">Скільки коштує наїстися суші в Мадриді (буфет Pacific за 18€)</div><div class="fn">F06_skilky-koshtuie-naistysia-sushi-v.txt</div></div></div>
+</details><details class="fr" style="--bg:#FFF1DF;--bd:#FFF1DF">
+  <summary>
+    <span class="fname">Зворотний відлік</span>
+    <span class="fsub">№12 · Retention · ритуал</span>
+    <span class="fcounts"><span class="sc rec">8 записать</span><span class="sc done">1 записано</span></span>
+    <span class="chev">▾</span>
+  </summary>
+  <div class="fbody"><div class="cell" data-id="c015bf9d94c8"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">1</span><div class="tt">З чого все почалося: як ми виїхали з України (і як чоловік за декілька місяців передчув)</div><div class="fn">F12_z-choho-vse-pochalosia-iak.txt</div></div><div class="cell" data-id="c79bd75e9340"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">2</span><div class="tt">Через тиждень після втечі я дізналась, що вагітна</div><div class="fn">F12_cherez-tyzhden-pislia-vtechi-ia.txt</div></div><div class="cell" data-id="cb0a7f01ed0d"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">3</span><div class="tt">Зворотний відлік #3: перша криза — хотіли поїхати назад</div><div class="fn">F12_zvorotnyi-vidlik-3-persha-kryza.txt</div></div><div class="cell" data-id="cedf48093073"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">4</span><div class="tt">Як ми перейшли на першу фазу</div><div class="fn">F12_iak-my-pereishly-na-pershu.txt</div></div><div class="cell" data-id="c7acd83425e0"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">5</span><div class="tt">Рокетас - курортне містечко чи тепличне море</div><div class="fn">F12_roketas-kurortne-mistechko-chy-teplych.txt</div></div><div class="cell" data-id="c43597165bd8"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">6</span><div class="tt">Зворотний відлік #20: лист собі в перший день в Іспанії</div><div class="fn">F12_zvorotnyi-vidlik-20-lyst-sobi.txt</div></div><div class="cell" data-id="c52aab1e1d50"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">7</span><div class="tt">Зворотний відлік #10: 12 місяців — чесні підсумки року</div><div class="fn">F12_zvorotnyi-vidlik-10-12-misiatsiv.txt</div></div><div class="cell" data-id="c005d3990f46"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">8</span><div class="tt">Зворотний відлік #19: що б ми зробили інакше — розбір з нуля</div><div class="fn">F12_zvorotnyi-vidlik-19-shcho-b.txt</div></div><div class="cell done-cell"><span class="ind done"></span><div class="tt">Зворотний відлік #25: нас покормили о півночі — перша ніч в Accem</div><div class="fn">F12_zvorotnyi-vidlik-25-nas-pokormyly.txt</div></div></div>
+</details><details class="fr" style="--bg:#FFE7EC;--bd:#FFE7EC">
+  <summary>
+    <span class="fname">Програма покроково</span>
+    <span class="fsub">№1 · Growth</span>
+    <span class="fcounts"><span class="sc rec">8 записать</span></span>
+    <span class="chev">▾</span>
+  </summary>
+  <div class="fbody"><div class="cell" data-id="c82a1cb41e76"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">1</span><div class="tt">Крок 1: як подати заявку на програму захисту — повний розбір</div><div class="fn">F01_krok-1-iak-podaty-zaiavku.txt</div></div><div class="cell" data-id="c34f92536a20"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">2</span><div class="tt">Крок 2: документи для CREADE — що взяти і як не облажатися</div><div class="fn">F01_krok-2-dokumenty-dlia-creade.txt</div></div><div class="cell" data-id="cf1b351d4560"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">3</span><div class="tt">Крок 4: NIE vs TIE — у чому різниця і що потрібно саме вам</div><div class="fn">F01_krok-4-nie-vs-tie.txt</div></div><div class="cell" data-id="c4a5a5f81968"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">4</span><div class="tt">Як відкрити банківський рахунок ?</div><div class="fn">F01_iak-vidkryty-bankivskyi-rakhunok.txt</div></div><div class="cell" data-id="cccf2e5ecf19"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">5</span><div class="tt">Перші сім днів на програмі</div><div class="fn">F01_pershi-sim-dniv-na-prohrami.txt</div></div><div class="cell" data-id="c1ca6a61464a"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">6</span><div class="tt">Як взяти сіту на TIE</div><div class="fn">F01_iak-vziaty-situ-na-tie.txt</div></div><div class="cell" data-id="c3b2f667ad8a"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">7</span><div class="tt">Покроково: медкарта дитини в Іспанії з нуля</div><div class="fn">F01_pokrokovo-medkarta-dytyny-v-ispanii.txt</div></div><div class="cell" data-id="c4fa1e9e97f3"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">8</span><div class="tt">Що буде після червня 2027 — три сценарії</div><div class="fn">F01_shcho-bude-pislia-chervnia-2027.txt</div></div></div>
+</details><details class="fr" style="--bg:#E3F6F9;--bd:#E3F6F9">
+  <summary>
+    <span class="fname">Звичайний вівторок біля моря</span>
+    <span class="fsub">№11 · Growth · воскресный вайб</span>
+    <span class="fcounts"><span class="sc rec">7 записать</span></span>
+    <span class="chev">▾</span>
+  </summary>
+  <div class="fbody"><div class="cell" data-id="cabd49cc0f24"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">1</span><div class="tt">Ранкова рутина родини в Іспанії — без фільтрів</div><div class="fn">F11_rankova-rutyna-rodyny-v-ispanii.txt</div></div><div class="cell" data-id="cede48d62e2a"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">2</span><div class="tt">Що ми їмо на обід в Іспанії: звичайний день родини</div><div class="fn">F11_shcho-my-imo-na-obid.txt</div></div><div class="cell" data-id="cfc56fa30b4e"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">3</span><div class="tt">Ранок в Іспанії: кава, море, тиша — вайб нашого життя</div><div class="fn">F11_ranok-v-ispanii-kava-more.txt</div></div><div class="cell" data-id="cc4666f0b811"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">4</span><div class="tt">Вечір пʼятниці в нас: іспанське вино, діти сплять, море чути</div><div class="fn">F11_vechir-pʼiatnytsi-v-nas-ispanske.txt</div></div><div class="cell" data-id="c9d08254a98a"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">5</span><div class="tt">Знайшли дикий пляж — нікого немає. Це і є наша Іспанія</div><div class="fn">F11_znaishly-dykyi-pliazh-nikoho-nemaie.txt</div></div><div class="cell" data-id="c50b42a84ff1"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">6</span><div class="tt">Звичайний вівторок в Альмерії: ранок, ринок, море, діти — день родини</div><div class="fn">F11_zvychainyi-vivtorok-v-almerii-ranok.txt</div></div><div class="cell" data-id="c5df0a22b84c"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">7</span><div class="tt">Зима біля моря: коли всі думають «там спекотно» — наша реальність</div><div class="fn">F11_zyma-bilia-moria-koly-vsi.txt</div></div></div>
+</details><details class="fr" style="--bg:#F5E9FB;--bd:#F5E9FB">
+  <summary>
+    <span class="fname">Життя на програмі зсередини</span>
+    <span class="fsub">№33 · Authority · 2 ролика/нед.</span>
+    <span class="fcounts"><span class="sc rec">8 записать</span></span>
+    <span class="chev">▾</span>
+  </summary>
+  <div class="fbody"><div class="cell" data-id="c8649c59da17"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">1</span><div class="tt">Оператор зв&#x27;язку: як платити 18€ замість 45€ за три сімки</div><div class="fn">F33_operator-zviazku-iak-platyty-18.txt</div></div><div class="cell" data-id="ca6a8d1c37a9"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">2</span><div class="tt">Квест: яке собеседування проходять на вході в центр Accem</div><div class="fn">F33_kvest-iake-sobeseduvannia-prokhodiat-n.txt</div></div><div class="cell" data-id="c11137602633"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">3</span><div class="tt">Правила центру Accem: що можна, що не можна — і що буде за порушення</div><div class="fn">F33_pravyla-tsentru-accem-shcho-mozhna.txt</div></div><div class="cell" data-id="c9e001c18fe5"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">4</span><div class="tt">Режим дня в центрі: підйом, їжа, заняття — розклад, який ніхто не показує</div><div class="fn">F33_rezhym-dnia-v-tsentri-pidiom.txt</div></div><div class="cell" data-id="cfd8e54f7a11"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">5</span><div class="tt">Харчування в центрі: що дають і як полегшити собі життя (Carrefour за 5 хв)</div><div class="fn">F33_kharchuvannia-v-tsentri-shcho-daiut.txt</div></div><div class="cell" data-id="c4807fe7a237"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">6</span><div class="tt">Мова на програмі: чому іспанська — обов&#x27;язок, а не порада</div><div class="fn">F33_mova-na-prohrami-chomu-ispanska.txt</div></div><div class="cell" data-id="c6f78b186079"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">7</span><div class="tt">Прання і побут: як влаштований звичайний день у центрі</div><div class="fn">F33_prannia-i-pobut-iak-vlashtovanyi.txt</div></div><div class="cell" data-id="cfd45c26a377"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">8</span><div class="tt">Обов&#x27;язки на програмі: що вимагають офіційно (мова, зустрічі, документи)</div><div class="fn">F33_oboviazky-na-prohrami-shcho-vymahaiut.txt</div></div></div>
+</details><details class="fr" style="--bg:#FFE7EC;--bd:#FFE7EC">
+  <summary>
+    <span class="fname">Ви запитували <span class="badge">🏷 бонус</span></span>
+    <span class="fsub">№19 · Бонус</span>
+    <span class="fcounts"><span class="sc rec">2 записать</span></span>
+    <span class="chev">▾</span>
+  </summary>
+  <div class="fbody"><div class="cell" data-id="ccf43c79ec33"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">1</span><div class="tt">Ви запитували: відношення до українців</div><div class="fn">F19_vy-zapytuvaly-vidnoshennia-do-ukraints.txt</div></div><div class="cell" data-id="c081de9af602"><label class="cb"><input type="checkbox" onchange="toggleCard(this)"><span class="box"></span></label><span class="ind rec">2</span><div class="tt">Ви запитували: освоєння мови</div><div class="fn">F19_vy-zapytuvaly-osvoiennia-movy.txt</div></div></div>
+</details>
+  </div>
+  <button id="copyBtn" class="copybtn" onclick="copyReport()">📋 Скопировать список записанного</button>
+  <div class="legend">
+    <div class="lt">Статусы</div>
+    <div class="lg"><span class="ci" style="background:var(--red)">№</span>🔴 записать — число = порядок записи</div>
+    <div class="lg"><span class="ci" style="background:var(--green)"></span>🟢 записано (транскрипт есть)</div>
+    <div class="lg">☑️ отметь галочкой, что записала — счётчик сверху обновится сам.</div><div class="lg">📋 в конце нажми зелёную кнопку и вставь список Сергею в чат.</div>
+    <div class="lg"><span style="font-family:ui-monospace,Menlo,monospace;color:#A9A9AE;font-size:11px">F04_имя-файла.txt</span> — так Сергей назовёт расшифровку этой темы.</div>
+  </div>
+  <div class="bar">
+    <div class="b"><div class="bv g"></div><div class="bk">отметила</div></div>
+    <div class="b"><div class="bv r"></div><div class="bk">осталось</div></div>
+  </div>
+  <div class="foot">Записала новую тему → скинь Сергею — он отметит в таблице, и 🔴 станет 🟢 при следующем обновлении.<br>Источник: Google Таблица «SpainLife · Черга роликів».</div>
+</div>
+<script>
+function allCells(){ return Array.prototype.slice.call(document.querySelectorAll('.cell[data-id]')); }
+function toggleCard(input){
+  var cell = input.closest('.cell');
+  cell.classList.toggle('checked', input.checked);
+  var id = cell.getAttribute('data-id');
+  if(id){ try { localStorage.setItem('sl_rq_'+id, input.checked ? '1':'0'); } catch(e){} }
+}
+function copyReport(){
+  var lines = [];
+  document.querySelectorAll('details.fr').forEach(function(fr){
+    var name = fr.querySelector('.fname').textContent.trim();
+    var got = [];
+    fr.querySelectorAll('.cell[data-id]').forEach(function(c){
+      var i = c.querySelector('input');
+      if(i && i.checked){ got.push('  • ' + c.querySelector('.tt').textContent.trim()); }
+    });
+    if(got.length){ lines.push(name + ':'); lines.push(got.join('
+')); }
+  });
+  var txt = lines.length ? ('Записала:
+' + lines.join('
+')) : 'Пока ничего не отмечено';
+  var btn = document.getElementById('copyBtn');
+  function ok(){ btn.textContent = '✓ Скопировано — вставь Сергею'; btn.classList.add('ok');
+                 setTimeout(function(){ btn.textContent='📋 Скопировать список записанного'; btn.classList.remove('ok'); }, 2500); }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(ok, function(){ fallback(txt, ok); });
+  } else { fallback(txt, ok); }
+}
+function fallback(txt, cb){
+  var ta = document.createElement('textarea');
+  ta.value = txt; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); cb(); } catch(e){ alert(txt); }
+  document.body.removeChild(ta);
+}
+document.addEventListener('DOMContentLoaded', function(){
+  allCells().forEach(function(cell){
+    var id = cell.getAttribute('data-id');
+    var v; try { v = localStorage.getItem('sl_rq_'+id); } catch(e){ v = null; }
+    if(v === '1'){ var i = cell.querySelector('input[type=checkbox]'); if(i){ i.checked = true; cell.classList.add('checked'); } }
+  });
+});
+</script>
+</body>
+</html>
